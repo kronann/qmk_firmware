@@ -23,6 +23,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define RGB_MATRIX_KEYPRESSES
 
+#define ENABLE_RGB_MATRIX_SOLID_COLOR
+#define ENABLE_RGB_MATRIX_BREATHING
+
 #define SPLIT_TRANSPORT_MIRROR
 #define SPLIT_LAYER_STATE_ENABLE
 #define SPLIT_LED_STATE_ENABLE
@@ -30,6 +33,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Combos configuration */
 #define COMBO_COUNT 1
-#define COMBO_TERM 50
+#define COMBO_TERM 100
 
 #define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX

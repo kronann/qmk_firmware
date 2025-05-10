@@ -15,3 +15,4 @@ enum unicode_names {
     FR_LDAQ = 0x00AB,   // «
     FR_RDAQ = 0x00BB    // »
 };
+    
