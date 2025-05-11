@@ -13,6 +13,6 @@ enum unicode_names {
     A_E     = 0x00E6,   // æ
     O_E     = 0x0153,   // œ
     FR_LDAQ = 0x00AB,   // «
-    FR_RDAQ = 0x00BB    // »
+    FR_RDAQ = 0x00BB,   // »
+    FR_EXCL = 0x38
 };
-    
