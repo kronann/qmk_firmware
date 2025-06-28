@@ -14,5 +14,34 @@ enum unicode_names {
     O_E     = 0x0153,   // œ
     FR_LDAQ = 0x00AB,   // «
     FR_RDAQ = 0x00BB,   // »
-    FR_EXCL = 0x38
+    FR_EXCL = 0x38,
+    YEN     = 0x00A5
 };
+
+
+// Define keymap layers
+enum layers {
+    _DEFAULT,
+    _NAVIGATION,
+    _BOOT,
+    _SYMBOLES,
+    _CODE,
+    _MOUSE,
+    _GAME,
+    _NUMBERS
+};
+
+/*
+ TAP LAYER
+*/
+enum custom_keycodes {
+    TAP_LAYER_GAME = SAFE_RANGE,
+    TAP_LAYER_BOOT,
+    TAP_LAYER_RESET,
+    OSL_SYM_EXCL
+};
+typedef struct {
+    uint8_t count;
+    uint16_t last_time;
+} tap_counter_t;
+

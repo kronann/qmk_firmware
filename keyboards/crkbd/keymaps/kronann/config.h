@@ -20,8 +20,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#define TAPPING_TOGGLE 2
+#define FLOW_TAP_TERM 150
+
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define RGB_MATRIX_KEYPRESSES
+#define LED_MATRIX_MAXIMUM_BRIGHTNESS 100
+#define RGBLIGHT_DEFAULT_VAL 100
+#define RGB_MATRIX_STARTUP_VAL 100
 
 #define ENABLE_RGB_MATRIX_SOLID_COLOR
 #define ENABLE_RGB_MATRIX_BREATHING
