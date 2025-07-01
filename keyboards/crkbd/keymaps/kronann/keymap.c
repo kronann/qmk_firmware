@@ -6,12 +6,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Layer DEFAULT - Configuration Ergo-L de base
     [_DEFAULT] = LAYOUT_split_3x6_3_ex2(
-    //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        QK_GESC,        FR_Q,         FR_C,         FR_O,         FR_P,         FR_W,       KC_LEFT,  KC_UP,     FR_J,    FR_M,    FR_D,    OSL(_SYMBOLES), FR_Y,    KC_HOME,
-        LSFT_T(KC_TAB), ALT_T(FR_A),  LGUI_T(FR_S), CTL_T(FR_E),  SFT_T(FR_N),  FR_F,       KC_RIGHT, KC_DOWN,   FR_L,    FR_R,    FR_T,    FR_I,           FR_U,    KC_BSPC,
-        KC_LCTL,        FR_Z,         FR_X,         FR_MINS,      FR_V,         FR_B,                            FR_DOT,  FR_H,    FR_G,    FR_COMM,        FR_K,    KC_END,
-                                      KC_LGUI,      MO(_MOUSE),   LALT_T(KC_SPC),           LT(_CODE, KC_ENT), MO(_NUMBERS), TT(_NAVIGATION)
-    ),
+    //----------------*-------------*-------------*-------------*----------*----------|      |----------*-----------*-------------*-------------*-------------*-------------|
+        QK_GESC,        FR_Q,         FR_C,         FR_O,         FR_P,         FR_W,    KC_LEFT,  KC_UP,     FR_J,    FR_M,    FR_D,    OSL(_SYMBOLES), FR_Y,    KC_HOME,
+        LSFT_T(KC_TAB), LGUI_T(FR_A), LALT_T(FR_S), LSFT_T(FR_E), LCTL_T(FR_N), FR_F,    KC_RIGHT, KC_DOWN,   FR_L,    RCTL_T(FR_R),     RSFT_T(FR_T),   RALT_T(FR_I), RGUI_T(FR_U),    KC_BSPC,
+        KC_LCTL,        FR_Z,         FR_X,         FR_MINS,      FR_V,         FR_B,               FR_DOT,  FR_H,    FR_G,    FR_COMM,        FR_K,    KC_END,
+    //----------------*-------------*-------------*-------------*----------*----------|      |----------*----------*-------------*-------------*-------------*-------------|
+    //                                      |------------*----------*--------|   |--------*--------------*-------------|
+
+                                                KC_LGUI,   MO(_MOUSE), LALT_T(KC_SPC),  LT(_CODE, KC_ENT), MO(_NUMBERS), TT(_NAVIGATION)
+    //                                      |------------*----------*--------|   |--------*--------------*-------------|
+    ),  
 
     // Layer NAVIGATION - Symboles de navigation0189715617
     [_NAVIGATION] = LAYOUT_split_3x6_3_ex2(
@@ -47,25 +51,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Layer MOUSE - Contrôle de souris
     [_MOUSE] = LAYOUT_split_3x6_3_ex2(
-        _______, KC_MS_WH_LEFT, KC_MS_WH_UP, KC_MS_WH_DOWN, KC_MS_WH_RIGHT, XXXXXXX,      KC_HOME, KC_PGUP,   XXXXXXX,      KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2, XXXXXXX, _______,
-        _______, KC_MS_LEFT,    KC_MS_UP,    KC_MS_DOWN,    KC_MS_RIGHT,    XXXXXXX,      KC_END,  KC_PGDN,   XXXXXXX,      KC_LEFT,      KC_DOWN,      KC_UP,        KC_RIGHT, _______,
+        _______, C(FR_X),        KC_MS_WH_UP, KC_MS_WH_DOWN, C(FR_C),      C(FR_V),        KC_HOME, KC_PGUP,   XXXXXXX,     KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2, XXXXXXX, _______,
+        _______, KC_MS_LEFT,    KC_MS_UP,    KC_MS_DOWN,    KC_MS_RIGHT, C(FR_Z),      KC_END,  KC_PGDN,   XXXXXXX,      KC_LEFT,      KC_DOWN,      KC_UP,        KC_RIGHT, _______,
         _______, KC_BSPC,       S(KC_TAB),   KC_TAB,        KC_DEL,  TAP_LAYER_BOOT,                          XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX, _______, 
                                               XXXXXXX,      _______, TAP_LAYER_GAME,                KC_MS_BTN1, KC_MS_BTN3, KC_MS_BTN2
     ),
 
     // Layer pour le Game
     [_GAME] = LAYOUT_split_3x6_3_ex2(
-        QK_GESC,        KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,              KC_HOME, KC_PGUP,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_HOME,
-        LSFT_T(KC_TAB), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,              KC_END,  KC_PGDN,   KC_H,    KC_J,    KC_K,    KC_L,    KC_VOLU, KC_BSPC,
-        KC_LCTL,        KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                                  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_VOLD, KC_END,
-                                      KC_I, MO(_NUMBERS), KC_SPC,                    XXXXXXX, XXXXXXX, TAP_LAYER_RESET
+        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,              KC_HOME, KC_PGUP,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    QK_GESC,
+        KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,              KC_END,  KC_PGDN,   KC_H,    KC_J,    KC_K,    KC_L,    KC_VOLU, KC_BSPC,
+        KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                                  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_VOLD, KC_END,
+                                      KC_I, MO(_NUMBERS), KC_SPC,                    KC_ENT, XXXXXXX, TAP_LAYER_RESET
     ),
 
     // Layer NUM - Chiffres et contrôles de navigation
     [_NUMBERS] = LAYOUT_split_3x6_3_ex2(
-        _______, FR_1,    FR_2,    FR_3,    FR_4,    FR_5,              KC_HOME, KC_PGUP,   FR_6,    FR_7,    FR_8,    FR_9,    FR_0,    _______,
-        _______, FR_6,    FR_7,    FR_8,    FR_9,    FR_0,              KC_END,  KC_PGDN,   XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,_______,
-        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                               XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______,
-                                   _______, XXXXXXX, _______,                      KC_ENT, XXXXXXX, XXXXXXX
+        FR_1,    FR_2,    FR_3,    FR_0,   FR_PLUS,FR_MINS,           KC_HOME, KC_PGUP,   XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    _______,
+        FR_4,    FR_5,    FR_6,    FR_0,   FR_ASTR,  FR_SLSH,           KC_END,  KC_PGDN,   XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,_______,
+        FR_7,    FR_8,    FR_9,   KC_DOT, FR_EQL, FR_PERC,                              XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______,
+                                   XXXXXXX, XXXXXXX, _______,                      KC_ENT, XXXXXXX, XXXXXXX
     ),
 };
