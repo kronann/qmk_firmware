@@ -64,6 +64,8 @@ Les deux OS lisent le clavier en JIS.
 - **macOS** : `keyboard_type_v2 = "jis"` dans `~/.config/karabiner/karabiner.json`.
 - **Linux** : `kb_layout = "jp,fr,fr(ergol),us"` dans Hyprland, donc jp par défaut.
 - **Karabiner** : règle limitée au Corne (`vendor_id` / `product_id` du crkbd) qui transforme Ctrl + C V X Z A S F T W N Q R L P en ⌘ + la même touche, sauf si l'application au premier plan est kitty (`net.kovidgoyal.kitty`) ou UTM/Parallels. Les touches 英数/かな sont limitées au MacBook. La règle globale « ⌘ gauche → Hyper » reste globale.
+- **Karabiner, `\`** : macOS JIS donne `_` pour la touche ろ ; une règle limitée au Corne transforme ろ sans modificateur en ⌥ droit + ¥, qui donne `\`.
+- **kitty** : `macos_option_as_alt left`, pour que ⌥ droit reste une Option macOS et que ⌥¥ donne `\` (⌥ gauche reste Alt).
 - **skhd** :
   ```
   ctrl + alt + cmd - pageup : yabai -m space --focus prev
