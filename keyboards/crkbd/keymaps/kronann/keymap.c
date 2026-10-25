@@ -11,9 +11,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_LOWER] = LAYOUT_split_3x6_3_ex2(
-        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______,     LGUI(KC_PGUP), KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
-        KC_LCTL, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, _______,     LGUI(KC_PGDN), KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_TILD,
-        KC_LSFT, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,                              KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS, _______,
+        JP_EXLM, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______,     LGUI(KC_PGUP), KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
+        KC_LCTL, JP_HASH, JP_LCBR, JP_LBRC, JP_LPRN, JP_EQL,  _______,     LGUI(KC_PGDN), JP_MINS, JP_RPRN, JP_RBRC, JP_RCBR, JP_DLR,  JP_UNDS,
+        KC_LSFT, JP_GRV,  JP_AT,   JP_AMPR, JP_LABK, JP_PIPE,                              JP_CIRC, JP_RABK, JP_ASTR, JP_PERC, JP_PLUS, JP_TILD,
                                             _______, _______, LCTL(KC_SPC),    _______,    _______, _______
     ),
 
