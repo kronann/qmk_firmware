@@ -35,13 +35,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
 
 const key_override_t quote_key_override = ko_make_basic(MOD_MASK_SHIFT, JP_QUOT, JP_DQUO);
-const key_override_t backslash_key_override = ko_make_basic(MOD_MASK_SHIFT, JP_SLSH, JP_BSLS);
 const key_override_t question_key_override = ko_make_basic(MOD_MASK_SHIFT, JP_EXLM, JP_QUES);
 
 const key_override_t *key_overrides[] = {
     &delete_key_override,
     &quote_key_override,
-    &backslash_key_override,
     &question_key_override,
 };
 
@@ -62,6 +60,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case JP_SCLN:
             tap_without_shift(JP_COLN);
+            return false;
+        case JP_SLSH:
+            tap_without_shift(JP_BSLS);
             return false;
     }
     return true;
