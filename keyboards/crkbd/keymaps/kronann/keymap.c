@@ -35,14 +35,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
 
 const key_override_t quote_key_override = ko_make_basic(MOD_MASK_SHIFT, JP_QUOT, JP_DQUO);
-const key_override_t colon_key_override = ko_make_basic(MOD_MASK_SHIFT, JP_SCLN, JP_COLN);
 const key_override_t backslash_key_override = ko_make_basic(MOD_MASK_SHIFT, JP_SLSH, JP_BSLS);
 const key_override_t question_key_override = ko_make_basic(MOD_MASK_SHIFT, JP_EXLM, JP_QUES);
 
 const key_override_t *key_overrides[] = {
     &delete_key_override,
     &quote_key_override,
-    &colon_key_override,
     &backslash_key_override,
     &question_key_override,
 };
+
+// Karabiner reorders a report that both releases Shift and presses a key, so Shift is released in its own report first.
+static void tap_without_shift(uint16_t keycode) {
+    const uint8_t mods = get_mods();
+    del_mods(MOD_MASK_SHIFT);
+    send_keyboard_report();
+    tap_code16(keycode);
+    set_mods(mods);
+    send_keyboard_report();
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (!record->event.pressed || !(get_mods() & MOD_MASK_SHIFT)) {
+        return true;
+    }
+    switch (keycode) {
+        case JP_SCLN:
+            tap_without_shift(JP_COLN);
+            return false;
+    }
+    return true;
+}
