@@ -1,6 +1,6 @@
 # Keymap kronann (Corne)
 
-QWERTY US standard, 4 couches, mêmes codes sur macOS et Linux. L'hôte est réglé en US/ABC ; le japonais passe par l'IME (Ctrl+Espace).
+QWERTY, 4 couches, mêmes codes sur macOS et Linux. Le firmware envoie des codes japonais (`JP_*`) pour tous les symboles, et les deux OS lisent le clavier en JIS : chaque symbole du schéma sort tel quel. Le japonais passe par l'IME (Ctrl+Espace).
 
 Chaque couche se lit : 6 touches gauches, `[intérieure gauche]`, `[intérieure droite]`, 6 touches droites. `▽` = transparente, `·` = aucune action.
 
@@ -15,25 +15,25 @@ Ctrl  A S D F G  [→] [↓]  H J K L ; '
         Hyper LOWER Espace   Entrée RAISE Alt
 ```
 
-Hyper = Super gauche. Shift + Bksp = Suppr.
+Hyper = Super gauche. Shift + Bksp = Suppr. Shift façon US : Shift + `'` = `"`, Shift + `;` = `:`, Shift + `/` = `\`, Shift + `,` = `<`, Shift + `.` = `>`.
 
 ### LOWER (pouce gauche central)
 
 ```
-`     1 2 3 4 5  ▽ [WS←]  6 7 8 9 0 Suppr
-Ctrl  ! @ # $ %  ▽ [WS→]  ^ & * ( ) ~
-⇧     _ + { } |           - = [ ] \ ▽
+!     1 2 3 4 5  ▽ [WS←]  6 7 8 9 0 Suppr
+Ctrl  # { [ ( =  ▽ [WS→]  - ) ] } $ _
+⇧     ` @ & < |           ^ > * % + ~
         ▽ ▽ ABC⇄あ         ▽ ▽ ▽
 ```
 
-WS←/WS→ = Super+PgUp / Super+PgDn. ABC⇄あ = Ctrl+Espace.
+WS←/WS→ = Super+PgUp / Super+PgDn. ABC⇄あ = Ctrl+Espace. Shift + `!` = `?`. Les ouvrants et fermants sont en miroir sur la rangée de repos.
 
 ### RAISE (pouce droit central)
 
 ```
 ▽     · · ↑ · ·       ▽ ▽  Début PgDn PgUp Fin Impr ▽
 Ctrl  Mol↑ ← ↓ → Lent ▽ ▽  ← ↓ ↑ → · ·
-⇧     Mol↓ ClicM ClicD ClicG ·   Muet Vol− Vol+ Lum− Lum+ ▽
+⇧     Mol↓ ClicD ClicM ClicG ·   Muet Vol− Vol+ Lum− Lum+ ▽
         ClicD LOWER ClicG      ▽ ▽ ▽
 ```
 
@@ -57,12 +57,15 @@ qmk compile -kb crkbd/rev4_1/standard -km kronann
 
 Flasher chaque moitié : ADJUST + Boot, puis copier `crkbd_rev4_1_standard_kronann.uf2` sur le volume qui apparaît.
 
-## Configuration OS (hors dépôt)
+## Configuration OS (hors dépôt, en place)
 
-- **Karabiner** : règle limitée au Corne (`vendor_id` / `product_id` du crkbd) qui transforme Ctrl + C V X Z A S F T W N Q R L P en ⌘ + la même touche, sauf si l'application au premier plan est kitty (`net.kovidgoyal.kitty`) ou UTM/Parallels. La règle globale « ⌘ gauche → Hyper » reste globale.
+Les deux OS lisent le clavier en JIS.
+
+- **macOS** : `keyboard_type_v2 = "jis"` dans `~/.config/karabiner/karabiner.json`.
+- **Linux** : `kb_layout = "jp,fr,fr(ergol),us"` dans Hyprland, donc jp par défaut.
+- **Karabiner** : règle limitée au Corne (`vendor_id` / `product_id` du crkbd) qui transforme Ctrl + C V X Z A S F T W N Q R L P en ⌘ + la même touche, sauf si l'application au premier plan est kitty (`net.kovidgoyal.kitty`) ou UTM/Parallels. Les touches 英数/かな sont limitées au MacBook. La règle globale « ⌘ gauche → Hyper » reste globale.
 - **skhd** :
   ```
   ctrl + alt + cmd - pageup : yabai -m space --focus prev
   ctrl + alt + cmd - pagedown : yabai -m space --focus next
   ```
-- **Hyprland** : rien à changer.
