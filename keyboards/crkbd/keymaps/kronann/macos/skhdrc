@@ -15,7 +15,7 @@ ctrl + alt + cmd - return : open -n -a "kitty"
 # SUPER + B : Brave Browser
 ctrl + alt + cmd - b : open -n -a "Brave Browser"
 
-# SUPER + E : Finder (équivalent Nautilus)
+# SUPER + E : Marta (gestionnaire de fichiers)
 ctrl + alt + cmd - e : /Applications/Marta.app/Contents/MacOS/Marta -n
 
 # SUPER + R : Obsidian
@@ -72,7 +72,7 @@ ctrl + alt + cmd + shift - up : yabai -m window --swap north
 ctrl + alt + cmd + shift - right : yabai -m window --swap east
 
 # ============================================
-# Window Resize (ALT + flèches)
+# Window Resize (SUPER + SHIFT + hjkl)
 # ============================================
 
 ctrl + alt + cmd + shift - h : yabai -m window --resize left:-50:0 || yabai -m window --resize right:-50:0
