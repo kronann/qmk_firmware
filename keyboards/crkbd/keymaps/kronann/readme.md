@@ -12,19 +12,19 @@ Chaque couche se lit : 6 touches gauches, `[intérieure gauche]`, `[intérieure 
 
 ```
 Tab   Q W E R T  [←] [↑]  Y U I O P Bksp
-Ctrl  A S D F G  [→] [↓]  H J K L ; '
-⇧     Z X C V B           N M , . / Esc
+⇧     A S D F G  [→] [↓]  H J K L ; '
+Ctrl  Z X C V B           N M , . / Esc
         Hyper LOWER Espace   Entrée RAISE Alt
 ```
 
-Hyper = Super gauche. Shift + Bksp = Suppr. Shift façon US : Shift + `'` = `"`, Shift + `;` = `:`, Shift + `/` = `\`, Shift + `,` = `<`, Shift + `.` = `>`.
+Tab = Tab si on tape, Ctrl si on maintient. Hyper = Super gauche. Shift + Bksp = Suppr. Shift façon US : Shift + `'` = `"`, Shift + `;` = `:`, Shift + `/` = `\`, Shift + `,` = `<`, Shift + `.` = `>`.
 
 ### LOWER (pouce gauche central)
 
 ```
 !     1 2 3 4 5  ▽ [WS←]  6 7 8 9 0 Suppr
-Ctrl  # { [ ( =  ▽ [WS→]  - ) ] } $ _
-⇧     ` @ & < |           ^ > * % + ~
+⇧     # { [ ( =  ▽ [WS→]  - ) ] } $ _
+Ctrl  ` @ & < |           ^ > * % + ~
         ▽ ▽ ABC⇄あ         ▽ ▽ ▽
 ```
 
@@ -34,8 +34,8 @@ WS←/WS→ = Super+PgUp / Super+PgDn. Hyper + LOWER + chiffre 1–5 = Super+chi
 
 ```
 ▽     · · ↑ · ·       ▽ ▽  Début PgDn PgUp Fin Impr ▽
-Ctrl  Mol↑ ← ↓ → Lent ▽ ▽  ← ↓ ↑ → · ·
-⇧     Mol↓ ClicD ClicM ClicG ·   Muet Vol− Vol+ Lum− Lum+ ▽
+⇧     Mol↑ ← ↓ → Lent ▽ ▽  ← ↓ ↑ → · ·
+Ctrl  Mol↓ ClicD ClicM ClicG ·   Muet Vol− Vol+ Lum− Lum+ ▽
         ClicD LOWER ClicG      ▽ ▽ ▽
 ```
 

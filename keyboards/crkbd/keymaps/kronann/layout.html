@@ -116,13 +116,13 @@ const OS = {
 const hyper = "os:hyper", lower = ["LOWER", "layerk"], raise = ["RAISE", "layerk"];
 const shift = ["⇧", "mod"];
 const layers = [
-  { name: "BASE", how: "par défaut", L: [["Tab","Q","W","E","R","T"], ["os:ctrl","A","S","D","F","G"], [shift,"Z","X","C","V","B"]],
+  { name: "BASE", how: "par défaut", L: [[["Tab","mod","maintenu = Ctrl"],"Q","W","E","R","T"], [shift,"A","S","D","F","G"], ["os:ctrl","Z","X","C","V","B"]],
     Lx: [["←","nav"], ["→","nav"]], R: [["Y","U","I","O","P",["Bksp","","⇧ = Suppr"]], ["H","J","K","L",[";","","⇧ = :"],["'","","⇧ = \""]], ["N","M",",",".",["/","","⇧ = \\"],"Esc"]],
     Rx: [["↑","nav"], ["↓","nav"]], Lt: [hyper, lower, "Espace"], Rt: ["Entrée", raise, "os:alt"] },
-  { name: "LOWER", how: "maintenir le pouce gauche central", L: [[["!","","⇧ = ?"],"1","2","3","4","5"], ["os:ctrl","#","{","[","(","="], [shift,"`","@","&","<","|"]],
+  { name: "LOWER", how: "maintenir le pouce gauche central", L: [[["!","","⇧ = ?"],"1","2","3","4","5"], [shift,"#","{","[","(","="], ["os:ctrl","`","@","&","<","|"]],
     Lx: [["?","","à décider"], ["?","","à décider"]], R: [["6","7","8","9","0",["Suppr","nav"]], ["-",")","]","}","$","_"], ["^",">","*","%","+","~"]],
     Rx: [["WS ←","nav","Super+PgUp"], ["WS →","nav","Super+PgDn"]], Lt: [T, ["LOWER","held"], ["ABC⇄あ","ime jp","Ctrl+Espace"]], Rt: [T, ["RAISE","layerk","→ ADJUST"], T] },
-  { name: "RAISE", how: "maintenir le pouce droit central", L: [[T,E,E,["↑","mouse","souris"],E,E], ["os:ctrl",["Mol ↑","mouse"],["←","mouse","souris"],["↓","mouse","souris"],["→","mouse","souris"],["Lent","mouse","précis"]], [shift,["Mol ↓","mouse"],["Clic D","mouse"],["Clic M","mouse"],["Clic G","mouse"],E]],
+  { name: "RAISE", how: "maintenir le pouce droit central", L: [[T,E,E,["↑","mouse","souris"],E,E], [shift,["Mol ↑","mouse"],["←","mouse","souris"],["↓","mouse","souris"],["→","mouse","souris"],["Lent","mouse","précis"]], ["os:ctrl",["Mol ↓","mouse"],["Clic D","mouse"],["Clic M","mouse"],["Clic G","mouse"],E]],
     Lx: [T, T], R: [[["Début","nav"],["PgDn","nav"],["PgUp","nav"],["Fin","nav"],["Impr","nav"],T], [["←","nav"],["↓","nav"],["↑","nav"],["→","nav"],E,E], [["Muet","nav"],["Vol−","nav"],["Vol+","nav"],["Lum−","nav"],["Lum+","nav"],T]],
     Rx: [T, T], Lt: [["Clic D","mouse"], ["LOWER","layerk","→ ADJUST"], ["Clic G","mouse"]], Rt: [T, ["RAISE","held"], T] },
   { name: "ADJUST", how: "LOWER + RAISE ensemble", L: [["F1","F2","F3","F4","F5","F6"], [["RGB","sys","on/off"],["Teinte+","sys"],["Sat+","sys"],["Lum+","sys"],["Effet+","sys"],E], [["Boot","sys","flash"],["Teinte−","sys"],["Sat−","sys"],["Lum−","sys"],["Effet−","sys"],E]],
